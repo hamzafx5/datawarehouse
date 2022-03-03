@@ -1,0 +1,25 @@
+{
+  "name": "datawarehouse",
+  "version": "1.0.0",
+  "description": "Landing page for Datawarehouse",
+  "main": "index.js",
+  "scripts": {
+    "css": "tailwindcss -i ./tailwind/index.css -o ./dist/css/style.css --watch",
+    "serve": "lite-server --baseDir=\"dist\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamzafx5/datawarehouse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamzafx5/datawarehouse/issues"
+  },
+  "homepage": "https://github.com/hamzafx5/datawarehouse#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "tailwindcss": "^3.0.23"
+  }
+}

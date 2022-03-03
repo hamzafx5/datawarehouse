@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply text-[#4B5D68] dark:text-gray-200 bg-white dark:bg-gray-900 p-4 font-normal selection:bg-indigo-100 selection:text-indigo-500;
+	}
+	h1,
+	.h1,
+	h2,
+	.h2,
+	h3,
+	.h3 {
+		@apply font-bold mb-[0.6em] text-[#212353] dark:text-gray-100;
+	}
+
+	h1,
+	.h1 {
+		@apply sm:text-4xl md:text-5xl;
+	}
+	h2,
+	.h2 {
+		@apply sm:text-3xl md:text-4xl;
+	}
+	h3,
+	.h3 {
+		@apply sm:text-2xl md:text-3xl;
+	}
+}
+
+@layer components {
+	/* switch button components */
+	.switch-btn {
+		@apply inline-block w-12 h-6 rounded-xl relative bg-gray-100 dark:bg-gray-800;
+	}
+	.switch-btn input {
+		@apply focus:outline-dashed focus:outline-gray-300 focus:outline-1 focus:outline-offset-2 rounded-xl appearance-none md:cursor-pointer transition-all duration-300 w-full h-full checked:bg-indigo-100 after:w-1/2 after:h-full after:rounded-xl after:bg-white after:inline-block after:scale-[0.88] checked:after:bg-indigo-500 checked:after:translate-x-6 after:transition-all after:duration-300;
+	}
+}

@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		@apply scroll-smooth;
+	}
+	html,
+	body {
+		@apply w-full min-h-screen overflow-x-hidden;
+	}
+	body {
+		@apply text-[#4B5D68] dark:text-gray-200 bg-white dark:bg-gray-900 font-normal;
+	}
+
+	img {
+		@apply max-w-full;
+	}
+
+	a {
+		@apply focus-effect;
+	}
+
+	h1,
+	.h1,
+	h2,
+	.h2,
+	h3,
+	.h3,
+	h4,
+	.h4 {
+		@apply font-bold mb-[0.6em] text-clr dark:text-gray-100;
+	}
+
+	h1,
+	.h1 {
+		@apply text-3xl sm:text-4xl md:text-5xl;
+	}
+
+	h2,
+	.h2 {
+		@apply text-2xl sm:text-3xl md:text-4xl;
+	}
+
+	h3,
+	.h3 {
+		@apply text-xl sm:text-2xl md:text-3xl;
+	}
+
+	h4,
+	.h4 {
+		@apply text-lg sm:text-xl md:text-2xl;
+	}
+}
+
+@layer components {
+	.switch-btn {
+		@apply inline-block w-12 h-6 rounded-xl relative bg-gray-200 dark:bg-gray-800;
+	}
+	.switch-btn input {
+		@apply focus-effect rounded-xl appearance-none md:cursor-pointer
+		main-transition w-full h-full checked:bg-purple-200
+		after:w-1/2 after:h-full after:rounded-xl after:bg-white after:inline-block after:scale-[0.88] checked:after:bg-[#9C69E2] checked:after:translate-x-6 after:transition-all after:duration-300;
+	}
+
+	.btn {
+		@apply focus-effect  hover:opacity-90
+			shadow-[0px_3px_9px_4px_rgba(75,93,104,0.1)] rounded-3xl px-[18px] md:px-[22px] py-[10px]
+			 font-medium select-none md:cursor-pointer cursor-default;
+	}
+	.btn.icon {
+		@apply flex items-center;
+	}
+	.btn.icon img {
+		@apply w-5 ml-2;
+	}
+	.btn.btn-white {
+		@apply bg-white dark:bg-gray-700 dark:text-gray-200;
+	}
+	.btn.btn-primary {
+		@apply bg-primary text-white;
+	}
+	.btn.btn-secondary {
+		@apply bg-secondary text-white;
+	}
+
+	/* Menu */
+	.menuBtn {
+		@apply w-7 h-7 relative focus-effect;
+	}
+	.menuBtn div {
+		@apply w-full bg-gray-600 h-[2px] rounded absolute main-transition;
+	}
+	.menuBtn.open div:first-child {
+		@apply rotate-45 top-[calc(50%-1px)];
+	}
+	.menuBtn.open div:nth-child(2) {
+		@apply opacity-0;
+	}
+	.menuBtn.open div:last-child {
+		@apply rotate-[-45deg] bottom-[calc(50%-1px)];
+	}
+
+	/* input */
+	.input {
+		@apply border bg-inherit block w-full h-[48px] rounded-md focus:border-primary focus-effect px-2;
+	}
+	.textarea {
+		@apply border bg-inherit block w-full min-h-[200px] rounded-md focus:border-primary focus-effect p-2 resize-y;
+	}
+}
+
+@layer utilities {
+	.focus-effect {
+		@apply focus:outline-dashed focus:outline-gray-300 focus:outline-1 focus:outline-offset-2;
+	}
+	.open-close {
+		@apply translate-x-[-100%] main-transition;
+	}
+	.open-close.open {
+		@apply translate-x-0;
+	}
+	.main-transition {
+		@apply transition-all duration-300;
+	}
+
+	.custom-shape {
+		border-radius: 42% 10% 10% 20% / 109% 10% 10% 23%;
+	}
+}

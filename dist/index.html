@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="dxark">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Data Warehouse</title>
+		<link rel="icon" tye="image/svg+xml" href="./img/logo.svg">
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,28 +13,375 @@
 			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/style.min.css" />
+		<script defer src="./js/app.min.js"></script>
 	</head>
-	<body class="">
-		<h1>Heading Size Testing</h1>
-		<h2>Heading Size Testing</h2>
-		<h3>Heading Size Testing</h3>
-		<br />
+	<body>
+		<!-- include classes for js -->
+		<span class="hidden w-2 h-2 mx-1"></span>
+		<nav class="w-full h-16 px-4 flex items-center justify-between max-w-screen-xl mx-auto">
+			<a class="w-10 cursor-default md:cursor-pointer" href="/">
+				<img src="./img/logo.svg" />
+			</a>
+			<ul
+				id="menu"
+				class="flex tm:fixed tm:z-10 tm:rounded-lg transition-all duration-500 tm:shadow-md tm:top-1/2 tm:left-[-150%] tm:translate-x-[-50%] tm:translate-y-[-50%] tm:w-[80vw] tm:h-max tm:bg-gray-50 tm:dark:bg-gray-800 tm:flex-col tm:px-2 tm:py-8 items-center"
+			>
+				<li class="tm:mb-3 tm:inline-block">
+					<a class="px-2 font-medium text-primary" href="#about">About</a>
+				</li>
+				<li class="tm:mb-3 tm:inline-block">
+					<a class="px-2 font-medium hover:text-primary" href="#future">Future</a>
+				</li>
+				<li class="tm:mb-3 tm:inline-block">
+					<a class="px-2 font-medium hover:text-primary" href="#testimoial">Testimonial</a>
+				</li>
+				<li class="tm:mb-3 tm:inline-block">
+					<a class="px-2 font-medium hover:text-primary" href="#contact">Contact</a>
+				</li>
+				<div class="md:hidden">
+					<button class="btn btn-white icon">Request Demo<img src="./img/right-arrow-t.svg" alt="" /></button>
+				</div>
+			</ul>
+			<div class="hidden md:block">
+				<button class="btn btn-white icon">Request Demo<img src="./img/right-arrow-t.svg" alt="" /></button>
+			</div>
+			<div class="menuBtn md:hidden" id="toggle-menu" tabindex="1">
+				<div class="top-1"></div>
+				<div class="top-[calc(50%-1px)]"></div>
+				<div class="bottom-1"></div>
+			</div>
+		</nav>
+		<!-- Site settings -->
+		<div
+			class="open-close z-20 absolute p-3 top-1/2 translate-y-[-50%] left-0 w-[220px] h-[140px] rounded-[0_0_0.5rem_0] shadow-md bg-gray-50 dark:bg-gray-800"
+		>
+			<div
+				class="w-8 h-8 absolute md:cursor-pointer top-0 right-[-2rem] rounded-[0_0.25rem_0.25rem_0] bg-inherit p-1"
+				id="settings-view-toggler"
+			>
+				<img class="animate-[spin_6s_linear_infinite]" src="./img/setting.png" />
+			</div>
+			<!-- toggle dark mode -->
+			<div class="flex items-center justify-between">
+				<p class="md:text-sm">Switch Mode</p>
+				<label for="mode" class="switch-btn">
+					<input type="checkbox" id="toggle-mode" />
+				</label>
+			</div>
+		</div>
+		<main class="container max-w-screen-xl">
+			<!-- Hero Section -->
+			<section
+				class="hero-section mb-[150px] lg:flex lg:min-h-[calc(100vh-4rem)] lg:items-center lg:gap-[4%] py-8 sm:w-[80%] md:w-full"
+			>
+				<div class="mb-8 lg:mb-0 lg:order-2 md:flex-[0_0_48%]">
+					<img class="w-full" src="./img/hero.svg" alt="" />
+				</div>
+				<div class="lg:order-1 md:flex-[0_0_48%]">
+					<h1>Save your data storage here.</h1>
+					<p class="mb-4">
+						Data Warehouse is a data storage area that has been tested for security, so you can store your
+						data here safely but not be afraid of being stolen by others.
+					</p>
+					<button class="btn btn-primary">Learn More</button>
+				</div>
+			</section>
+			<!-- About Section-->
+			<section
+				class="about-section bg-light-pink rounded-[50px] tm:rounded-2xl mb-[150px] flex lg:p-[70px] md:p-[1rem_1rem_1rem_0] p-4 items-center tm:flex-col"
+				id="about"
+			>
+				<div class="md:flex-[0_1_50%] tm:mb-4 about-img move-it">
+					<img src="./img/about.svg" alt="about as vector" />
+				</div>
+				<div class="md:flex-[0_1_50%] about-text">
+					<h2 class="move-it">We are a high-level data storage bank</h2>
+					<p class="move-it">
+						The place to store various data that you can access at any time through the internet and where
+						you can carry it. This very flexible storage area has a high level of security. To enter into
+						your own data you must enter the password that you created when you registered in this Data
+						Warehouse.
+					</p>
+				</div>
+			</section>
+			<!-- Futures Section-->
+			<section class="mb-[150px]" id="future">
+				<h3 class="text-center">Futures</h3>
+				<p class="block text-center max-w-md mx-auto mb-[100px]">
+					Some of the features and advantages that we provide for those of you who store data in this Data
+					Warehouse.
+				</p>
+				<!-- Futures Boxes -->
+				<div class="grid grid-cols-1 md:grid-cols-2" style="grid-gap: 1.5rem">
+					<div class="relative p-4 pl-[20%] bg-[#b2e6de] dark:bg-[#b2e6de]/70 custom-shape">
+						<img src="./img/f-search-data.svg" alt="" />
+						<h4>Search Data</h4>
+						<p class="mb-4">
+							Don’t worry if your data is very large, the Data Warehoue provides a search engine, which is
+							useful for making it easier to find data effectively saving time.
+						</p>
+						<a class="flex items-center justify-center hover:text-primary" href="#"
+							>Learn More <img class="ml-2" src="./img/right-arrow.svg"
+						/></a>
+					</div>
+					<div class="relative p-4 pl-[20%] bg-[#e5dcf1] dark:bg-[#e5dcf1]/70 custom-shape">
+						<img src="./img/f-hours-access.svg" alt="" />
+						<h4>24 Hour access</h4>
+						<p class="mb-4">
+							Access is given 24 hours a full morning to night and meet again in the morning, giving you
+							comfort when you need data when urgent.
+						</p>
+						<a class="flex items-center justify-center hover:text-primary" href="#"
+							>Learn More <img class="ml-2" src="./img/right-arrow.svg"
+						/></a>
+					</div>
+					<div class="relative p-4 pl-[20%] bg-[#FEEFF8] dark:bg-[#FEEFF8]/70 custom-shape">
+						<img src="./img/f-print-out.svg" alt="" />
+						<h4>Print Out</h4>
+						<p class="mb-4">
+							Print out service gives you convenience if someday you need print data, just edit it all and
+							just print it.
+						</p>
+						<a class="flex items-center justify-center hover:text-primary" href="#"
+							>Learn More <img class="ml-2" src="./img/right-arrow.svg"
+						/></a>
+					</div>
+					<div class="relative p-4 pl-[20%] bg-[#EAF5FB] dark:bg-[#EAF5FB]/70 custom-shape">
+						<img src="./img/f-sucrity-code.svg" alt="" />
+						<h4>Security Code</h4>
+						<p class="mb-4">
+							Data Security is one of our best facilities. Allows for your files to be safer. The file can
+							be secured with a code or password that you created, so only you can open the file.
+						</p>
+						<a class="flex items-center justify-center hover:text-primary" href="#"
+							>Learn More <img class="ml-2" src="./img/right-arrow.svg"
+						/></a>
+					</div>
+				</div>
+			</section>
+			<!-- Testimonials Section -->
+			<section class="p-4 md:p-6 lg:p-8 mb-[150px] bg-primary rounded-3xl" id="testimoial">
+				<h2 class="text-white my-4">Testimonials</h2>
+				<div class="slider relative w-full overflow-hidden py-4">
+					<!-- Slides Wrapper -->
+					<div
+						class="flex sm:gap-4 flex-grow flex-shrink-0 flex-nowrap w-max slider-wrapper transition-transform duration-700"
+					>
+						<div
+							class="bg-white inline-block dark:bg-gray-800 rounded-2xl p-4 phone:w-[calc(100vw_-_4rem)] sm:max-w-[500px]"
+						>
+							<div class="flex items-center mb-4">
+								<img
+									class="w-16 mr-4 rounded-full border-2 shadow-[0_0_0_2px] shadow-third"
+									src="./img/face-1.jpg"
+									alt="client"
+								/>
+								<div class="py-3">
+									<h4 class="mb-1 block">John Fang</h4>
+									<a href="#" class="text-primary block hover:text-third">wordfaang.com</a>
+								</div>
+							</div>
+							<p>
+								Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor
+								ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+							</p>
+						</div>
+						<div
+							class="bg-white inline-block dark:bg-gray-800 rounded-2xl p-4 phone:w-[calc(100vw_-_4rem)] sm:max-w-[500px]"
+						>
+							<div class="flex items-center mb-4">
+								<img
+									class="w-16 mr-4 rounded-full border-2 shadow-[0_0_0_2px] shadow-third"
+									src="./img/face-2.jpg"
+									alt="client"
+								/>
+								<div class="py-3">
+									<h4 class="mb-1 block">Make Jorden</h4>
+									<a href="#" class="text-primary block hover:text-third">web-class.com</a>
+								</div>
+							</div>
+							<p>
+								Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor
+								ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+							</p>
+						</div>
+						<div
+							class="bg-white inline-block dark:bg-gray-800 rounded-2xl p-4 phone:w-[calc(100vw_-_4rem)] sm:max-w-[500px]"
+						>
+							<div class="flex items-center mb-4">
+								<img
+									class="w-16 mr-4 rounded-full border-2 shadow-[0_0_0_2px] shadow-third"
+									src="./img/face-3.jpg"
+									alt="client"
+								/>
+								<div class="py-3">
+									<h4 class="mb-1 block">Brain Lopez</h4>
+									<a href="#" class="text-primary block hover:text-third">SEO/Founder</a>
+								</div>
+							</div>
+							<p>
+								Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor
+								ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+							</p>
+						</div>
+						<div
+							class="bg-white inline-block dark:bg-gray-800 rounded-2xl p-4 phone:w-[calc(100vw_-_4rem)] sm:max-w-[500px]"
+						>
+							<div class="flex items-center mb-4">
+								<img
+									class="w-16 mr-4 rounded-full border-2 shadow-[0_0_0_2px] shadow-third"
+									src="./img/face-4.jpg"
+									alt="client"
+								/>
+								<div class="py-3">
+									<h4 class="mb-1 block">Will Smith</h4>
+									<a href="#" class="text-primary block hover:text-third">find.com</a>
+								</div>
+							</div>
+							<p>
+								Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor
+								ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="flex items-center justify-between mt-4 mb-6">
+					<ul class="flex slides-count"></ul>
+					<div class="flex">
+						<span class="prev md:cursor-pointer mr-4 inline-block">
+							<img class="rotate-180" src="./img/right-arrow-white.svg" alt="" />
+						</span>
+						<span class="next md:cursor-pointer inline-block">
+							<img src="./img/right-arrow-white.svg" alt="" />
+						</span>
+					</div>
+				</div>
+			</section>
+			<!-- Contact us section -->
+			<section class="mb-[150px]" id="contact">
+				<h2>Contact us</h2>
+				<div class="md:flex md:justify-between">
+					<form class="md:flex-[1_1_50%] mb-8 md:mb-0 md:mr-8">
+						<div class="flex gap-4 mb-4 w-full">
+							<div class="flex-grow">
+								<label class="mb-3 inline-block" for="first-name">First Name</label>
+								<input class="input" type="text" id="first-name" />
+							</div>
+							<div class="flex-grow">
+								<label class="mb-3 inline-block" for="last-name">Last Name</label>
+								<input class="input" type="text" id="last-name" />
+							</div>
+						</div>
+						<div class="mb-4">
+							<label class="mb-3 inline-block" for="email" required>Email</label>
+							<input class="input" type="email" id="email" />
+						</div>
+						<div class="mb-4">
+							<label class="mb-3 inline-block" for="message" required>Message</label>
+							<textarea class="textarea" name="message" id="message"></textarea>
+						</div>
+						<button class="btn btn-primary block ml-auto">Send</button>
+					</form>
+					<div
+						class="md:flex-[1_1_50%] bg-gray-800 aspect-square rounded-lg overflow-hidden"
+						id="map-placeholder"
+					></div>
+				</div>
+			</section>
+			<!-- Call to action section -->
+			<section
+				class="mb-[150px] border-t dark:border-gray-700 pt-[70px] lg:flex lg:items-center lg:justify-between"
+			>
+				<div>
+					<h2>Try for free!</h2>
+					<p class="mb-8 lg:mb-0">Get limited 1 week free try our features!</p>
+				</div>
+				<div class="flex">
+					<button class="btn btn-secondary mr-4">Learn More</button>
+					<button class="btn btn-white icon">
+						Request Demo <img src="./img/right-arrow-t.svg" alt="" />
+					</button>
+				</div>
+			</section>
+		</main>
+		<!-- End Main Area -->
 
-		<label for="theme" class="switch-btn">
-			<input type="checkbox" id="theme" onclick="toggleMode()" />
-		</label>
+		<!-- Scroll to ta button -->
+		<div
+			id="back-to-top"
+			class="fixed right-5 bottom-5 w-8 h-8 bg-third rounded-md grid place-items-center md:cursor-pointer"
+		>
+			<img class="rotate-[-90deg] w-4" src="./img/right-arrow-white.svg" />
+		</div>
 
-		<p>
-			The Constructor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora nostrum velit voluptatem,
-			iste dolorem quas. Quaerat totam rerum doloremque nulla eos dolor iusto, quasi omnis amet obcaecati eius,
-			nisi accusantium!
-		</p>
+		<!-- Footer Area -->
+		<footer id="footer">
+			<div class="container max-w-screen-xl">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[36%_20%_20%_24%] mb-[150px]">
+					<div class="columns-1 mb-6 md-mb-0">
+						<div class="flex items-center gap-4 mb-10">
+							<img src="./img/logo.svg" alt="logo" />
+							<p class="text-xl m-0 font-medium">Data Wherehouse</p>
+						</div>
+						<address class="not-italic mb-4">
+							Warehouse Society, 234<br />
+							Bahagia Ave Street<br />
+							PRBW 29281
+						</address>
+						<p class="mb-2"><strong>Email:</strong> info@datawherehouse.project</p>
+						<p><strong>Phone:</strong> (555)123-4567</p>
+					</div>
+					<div class="columns-1 mb-6 md-mb-0">
+						<p class="text-xl font-medium mb-10">About</p>
+						<ul class="ml-4">
+							<li class="mb-2"><a class="hover:text-third" href="#">Profile</a></li>
+							<li class="mb-2"><a class="hover:text-third" href="#">Feature</a></li>
+							<li class="mb-2"><a class="hover:text-third" href="#">Careers</a></li>
+							<li><a class="hover:text-third" href="#">Blog</a></li>
+						</ul>
+					</div>
+					<div class="columns-1 mb-6 md-mb-0">
+						<p class="text-xl font-medium mb-10">Help</p>
+						<ul class="ml-4">
+							<li class="mb-2"><a class="hover:text-third" href="#">Support</a></li>
+							<li class="mb-2"><a class="hover:text-third" href="#">Sign Up</a></li>
+							<li class="mb-2"><a class="hover:text-third" href="#">Gide</a></li>
+							<li class="mb-2"><a class="hover:text-third" href="#">Reports</a></li>
+							<li><a class="hover:text-third" href="#">G&A</a></li>
+						</ul>
+					</div>
+					<div class="columns-1">
+						<p class="text-xl font-medium mb-10">Social Media</p>
+						<ul class="flex"">
+							<li class="mr-3"><a href="#"><img src="./img/001-twitter.png" alt="twitter"></a></li>
+							<li class="mr-3"><a href="#"><img src="./img/002-instagram.png" alt="instagram"></a></li>
+							<li><a href="#"><img src="./img/003-facebook.png" alt="facebook"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<a class="text-center text-sm block mb-8" href="#">
+				© Datawarehouse™, 2020. All rights reserved.<br>
+				Company Registration Number: 21479524.
+			</a>
+		</footer>
 
+		 
 		<script>
-			function toggleMode() {
-				console.log(this);
-				document.querySelector("html").classList.toggle("dark");
+			window.addEventListener("load", renderMap);
+			const mapLink = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6125970553617!2d-73.98795218467056!3d40.748549243315786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9aeb1c6b5%3A0x35b1cfbc89a6097f!2sEmpire%20State%20Building%2C%20New%20York%2C%20NY%2010001%2C%20USA!5e0!3m2!1sen!2sma!4v1646939294593!5m2!1sen!2sma`;
+
+			const mapHtml = `
+				<iframe src="${mapLink}" 
+					width="100%"
+					height="100%"
+					style="border: 0"
+					allowfullscreen=""
+					loading="lazy">
+				</iframe>`;
+			function renderMap() {
+				$("#map-placeholder").collection.innerHTML = mapHtml;
 			}
 		</script>
 	</body>

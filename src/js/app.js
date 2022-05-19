@@ -121,9 +121,15 @@ function toggleMenu() {
 }
 
 // close the menu when the use click on a link
-$("#menu li a").each((el) => {
-	$(el).on("click", () => toggleMenu());
-});
+function closeMenuOnClick() {
+	if (window.innerWidth < 768) {
+		$("#menu li a").each((el) => {
+			$(el).on("click", () => toggleMenu());
+		});
+	}
+}
+
+closeMenuOnClick();
 
 // Open and close the settings view
 $("#settings-view-toggler").on("click", ({ currentTarget }) => {
@@ -229,4 +235,5 @@ window.addEventListener("scroll", (e) => {
 		visibility: "visible",
 		pointerEvent: "",
 	});
+	closeMenuOnClick();
 });

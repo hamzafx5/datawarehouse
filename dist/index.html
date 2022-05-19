@@ -9,7 +9,7 @@
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
+		<link 
 			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
 			rel="stylesheet"
 		/>
@@ -72,8 +72,8 @@
 		</div>
 		<main class="container max-w-screen-xl">
 			<!-- Hero Section -->
-			<section
-				class="hero-section mb-[150px] lg:flex lg:min-h-[calc(100vh-4rem)] lg:items-center lg:gap-[4%] py-8 sm:w-[80%] md:w-full"
+			<section 
+				class="hero-section mb-[150px] lg:flex lg:min-h-[calc(100vh-4rem)] lg:items-center lg:gap-[4%] py-8 sm:w-[80%] sm:mx-auto lg:w-full"
 			>
 				<div class="mb-8 lg:mb-0 lg:order-2 md:flex-[0_0_48%]">
 					<img class="w-full" src="./img/hero.svg" alt="" />
@@ -373,13 +373,13 @@
 			const mapLink = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6125970553617!2d-73.98795218467056!3d40.748549243315786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9aeb1c6b5%3A0x35b1cfbc89a6097f!2sEmpire%20State%20Building%2C%20New%20York%2C%20NY%2010001%2C%20USA!5e0!3m2!1sen!2sma!4v1646939294593!5m2!1sen!2sma`;
 
 			const mapHtml = `
-				<iframe src="${mapLink}" 
+				<iframe
+					src="${mapLink}" 
 					width="100%"
 					height="100%"
 					style="border: 0"
 					allowfullscreen=""
-					loading="lazy">
-				</iframe>`;
+				></iframe>`; 
 			function renderMap() {
 				$("#map-placeholder").collection.innerHTML = mapHtml;
 			}
